@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abc Company</title>
+
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJp3QhqLmB6B1nGrR8o6q/zG6LfdIMq6i2gHlzY2PmjH1q7nMlCvE4mAz5Lr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Employee Details Form</h2>
+        <p class="text-center">Enter the required fields.</p>
+
+        <form onsubmit="return validateForm(event)">
+
+            <!-- Employee ID -->
+            <div class="mb-3">
+                <label for="employee_id" class="form-label">Employee ID :</label>
+                <input type="text" class="form-control" id="employee_id" name="employee_id">
+            </div>
+
+            <!-- Employee Name -->
+            <div class="mb-3">
+                <label for="name" class="form-label">Employee Name :</label>
+                <input type="text" class="form-control" id="name" name="name">
+                <p id="name_error" style="color: red;"></p>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email :</label>
+                <input type="text" class="form-control" id="email" name="email">
+                <p id="email_error" style="color: red;"></p>
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="mb-3">
+                <label for="phone" class="form-label">Mobile number :</label>
+                <div class="input-group">
+                    <select id="country_code" name="country_code" class="form-select">
+                        <option value="+91">+91</option>
+                        <option value="+1">+1</option>
+                        <option value="+44">+44</option>
+                        <option value="+61">+61</option>
+                    </select>
+                    <input type="text" class="form-control" id="phone" name="phone">
+                </div>
+                <p id="phone_error" style="color: red;"></p>
+            </div>
+
+            <!-- Department -->
+            <div class="mb-3">
+                <label for="department" class="form-label">Department :</label>
+                <select id="department" name="department" class="form-select">
+                    <option value="" disabled selected>Select Department</option>
+                    <option value="HR">HR</option>
+                    <option value="IT">IT</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Admin">Admin</option>
+                </select>
+                <p id="department_error" style="color: red;"></p>
+            </div>
+
+            <!-- Gender -->
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender:</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="male" name="gender" value="Male">
+                    <label for="male" class="form-check-label">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="female" name="gender" value="Female">
+                    <label for="female" class="form-check-label">Female</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="other" name="gender" value="Other">
+                    <label for="other" class="form-check-label">Other</label><br><br>
+                </div>
+                <p id="gender_error" style="color: red;"></p>
+            </div>
+
+            <div class="mb-3">
+                <label for="skill" class="form-label">Skills :</label><br>
+                
+                <input type="checkbox" id="skill_csharp" name="skill" value="C#">
+                <label for="skill_csharp">C#</label>
+
+                <input type="checkbox" id="skill_dotnet" name="skill" value="Dotnet">
+                <label for="skill_dotnet">Dot Net</label>
+
+                <input type="checkbox" id="skill_azure" name="skill" value="Azure">
+                <label for="skill_azure">Azure</label>
+
+                <input type="checkbox" id="skill_other" name="skill" value="Other" onchange="toggleOtherSkillInput(this)">
+                <label for="skill_other">Other</label>
+
+                
+                <input type="text" id="other_skill_input" class="form-control mt-2" placeholder="Enter your skill" style="display: none;">
+                
+                <p id="skill_error" style="color: red;"></p>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mb-3">
+                <input type="submit" class="btn btn-primary" value="Submit Form" required>
+            </div>
+
+            <div class="alert alert-success mt-4">
+                <label id="success_message" style="color: rgb(12, 227, 66); display: none;"></label>
+            </div>
+        </form>
+
+        <br><br>
+        <button class="btn btn-primary" onclick="showTable()">Show All Past Data</button>
+
+        <!-- Table initially hidden -->
+        <table id="data_table" class="table table-bordered mt-4" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Skills</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be added dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

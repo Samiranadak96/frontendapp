@@ -1,0 +1,129 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a8e7e5;
+    color: #343a40;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Container styles */
+.container {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 50px;
+    max-width: 800px;
+    margin-top: 50px;
+}
+
+/* Header styles */
+h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+/* Form styles */
+form {
+    font-size: 1rem;
+}
+
+/* Input and Select field styles */
+.form-control, .form-select {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #4b7cac;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Radio button styles */
+.form-check-inline {
+    margin-right: 50px;
+}
+
+.form-check-input {
+    margin-top: 5px;
+}
+
+/* Submit button styles */
+.btn-primary {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: fixed; /* Ensures columns have fixed widths */
+    word-wrap: break-word; /* Prevents content from overflowing */
+}
+
+table th, table td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: left;
+    overflow: hidden; /* Hides overflowing content */
+    text-overflow: ellipsis; /* Adds ellipsis for overflowing text */
+    white-space: normal; /* Allows text to wrap to the next line */
+}
+
+table th {
+    background-color: #06a5fa;
+    color: rgb(3, 0, 0);
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table tr:hover {
+    background-color: #e9ecef;
+}
+
+table td {
+    color: #343a40;
+}
+
+/* Action button styles */
+table td:last-child {
+    text-align: center; /* Center-align the action buttons */
+}
+
+.btn-danger {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
