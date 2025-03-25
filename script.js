@@ -108,7 +108,7 @@ function validateForm(event) {
             skills: skills.join(", ")
         };
 
-        fetch("http://localhost:5140/Employee/UpsertEmployee", {
+        fetch("http://127.0.0.1:5140/Employee/UpsertEmployee", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -160,7 +160,7 @@ function addDataToTable(id, name, email, country_code, phone, gender, department
 }
 
 function showTable() {
-    fetch("http://localhost:5140/Employee/GetEmployees", {
+    fetch("http://127.0.0.1:5140/Employee/GetEmployees", {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
@@ -209,7 +209,7 @@ function showTable() {
 
 function deleteRow(employeeId, button) {
     if (confirm("Are you sure you want to delete this employee?")) {
-        fetch(`http://localhost:5140/Employee/DeleteEmployee/${employeeId}`, {
+        fetch(`http://127.0.0.1:5140/Employee/DeleteEmployee/${employeeId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
