@@ -231,3 +231,77 @@ function deleteRow(employeeId, button) {
         });
     }
 }
+
+function handleLogin(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('login_email').value.trim();
+    const password = document.getElementById('login_password').value.trim();
+
+    const loginData = {
+        email: email,
+        password: password
+    };
+
+    fetch("https://your-api-endpoint.com/api/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(loginData)
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error("Login failed. Please check your credentials.");
+        }
+    })
+    .then(data => {
+        alert("Login successful!");
+        // Redirect to another page (e.g., dashboard)
+        window.location.href = "index.html";
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred during login.");
+    });
+}
+
+function handleRegister(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('register_name').value.trim();
+    const email = document.getElementById('register_email').value.trim();
+    const password = document.getElementById('register_password').value.trim();
+
+    const registerData = {
+        name: name,
+        email: email,
+        password: password
+    };
+
+    fetch("https://your-api-endpoint.com/api/register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(registerData)
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error("Registration failed. Please try again.");
+        }
+    })
+    .then(data => {
+        alert("Registration successful! You can now log in.");
+        // Optionally clear the form
+        document.getElementById('registerForm').reset();
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred during registration.");
+    });
+}

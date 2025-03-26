@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJp3QhqLmB6B1nGrR8o6q/zG6LfdIMq6i2PmjH1q7nMlCvE4mAz5Lr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2 class="text-center">Sign In</h2>
+            <form id="loginForm" onsubmit="return handleLogin(event)">
+                <div class="mb-3">
+                    <input type="text" class="form-control login-input" id="login_email" name="email" placeholder="Username" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control login-input" id="login_password" name="password" placeholder="Password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary login-btn">Login</button>
+            </form>
+            <p class="text-center mt-3">
+                Don't have an account? <a href="register.html" class="register-link">Register here</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,10 +1,14 @@
 /* General body styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #a8e7e5;
+    background: linear-gradient(135deg, #112acb, #2575fc);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     color: #343a40;
-    margin: 10px;
-    padding: 10px;
 }
 
 /* Container styles */
@@ -125,5 +129,64 @@ table td:last-child {
 
 .btn-danger:hover {
     background-color: #c82333;
+}
+
+/* Login Page Styles */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+
+.login-box h2 {
+    font-size: 1.8rem;
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-input {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: #3333cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #0000aa;
+}
+
+.forgot-password {
+    font-size: 0.9rem;
+    color: #3333cc;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.register-link {
+    color: #3333cc;
+    text-decoration: none;
+}
+
+.register-link:hover {
+    text-decoration: underline;
 }
 
